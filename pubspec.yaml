@@ -1,0 +1,59 @@
+name: crm_flutter
+description: "A new Flutter project."
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  auth_form_inputs:
+    path: packages/auth_form_inputs
+  edit_profile_form_inputs:
+    path: packages/edit_profile_form_inputs
+  cupertino_icons: ^1.0.8
+
+  flutter_svg: ^2.0.10+1
+  google_fonts: ^6.2.1
+  zoom_tap_animation: ^1.1.0
+
+  dio: ^5.6.0
+
+  bloc: ^8.1.4
+  flutter_bloc: ^8.1.6
+  get_it: ^7.7.0
+
+  formz: ^0.7.0
+  freezed_annotation: ^2.4.4
+  freezed: ^2.3.0
+  equatable: ^2.0.5
+
+  mask_text_input_formatter: ^2.9.0
+  toastification: ^2.1.0
+  shared_preferences: ^2.3.2
+  image_picker: ^1.1.2
+  shimmer: ^3.0.0
+  talker_dio_logger: ^4.4.1
+  json_annotation: ^4.9.0
+  intl: ^0.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^4.0.0
+  build_runner: ^2.4.12
+  json_serializable: ^6.8.0
+  hive_generator: ^2.0.1
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/icons/
+    - assets/images/
