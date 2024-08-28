@@ -69,7 +69,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 SizedBox(
                   width: DeviceScreen.w(context) / 1.5,
                   child: const Text(
-                    'Millima',
+                    'My academy',
                     style: TextStyle(
                       fontSize: 50,
                       fontWeight: FontWeight.w800,

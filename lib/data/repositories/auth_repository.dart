@@ -31,4 +31,8 @@ class AuthRepository {
   Future<void> logOut() async => _authDioService.logOut();
 
   String? checkTokenExpiry() => _authDioService.checkTokenExpiry();
+
+  Future<void> socialLogin(Map<String, dynamic> data)async{
+     _authDioService.socialLogin(data);
+  }
 }

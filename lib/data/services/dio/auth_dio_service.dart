@@ -1,12 +1,14 @@
 import 'package:crm_flutter/data/services/shared_prefs/token_prefs_service.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 import '../../models/app_response.dart';
 import '../../../core/network/dio_client.dart';
 
 class AuthDioService {
   final DioClient _dioClient = DioClient();
+  final googleSignIn = GoogleSignIn();
 
   /// login user using [phone] and [password]
   Future<AppResponse> login({
@@ -92,6 +94,38 @@ class AuthDioService {
       await _dioClient.post(url: '/logout');
     } catch (e) {
       debugPrint('error occurred in logout');
+    }
+  }
+
+  Future<void> socialLogin(Map<String, dynamic> data) async {
+    final AppResponse appResponse = AppResponse();
+    try {
+      final response = await _dioClient.post(
+        url: '/api/social-login',
+        data: data,
+      );
+      print("Response Social Login: $response");
+      appResponse.data = response.data;
+      if (appResponse.data != null) {
+        await TokenPrefsService.saveAccessToken(
+          appResponse.data['data']['token'].toString(),
+        );
+      } else {
+        throw Exception("Token not found in response");
+      }
+    } on DioException catch (e) {
+      print("DioException social login: $e");
+      throw (e.response?.data);
+    } catch (e) {
+      if (e is DioException) {
+        appResponse.statusCode = e.response?.statusCode;
+
+        appResponse.errorMessage = _getErrorMessage(e.response?.data);
+      } else {
+        appResponse.errorMessage = e.toString();
+      }
+
+      appResponse.isSuccess = false;
     }
   }
 

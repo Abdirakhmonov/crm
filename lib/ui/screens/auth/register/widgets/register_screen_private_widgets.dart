@@ -21,7 +21,7 @@ class _MainText extends StatelessWidget {
         ),
         16.sizedBoxW,
         Text(
-          'Milliyma',
+          'My academy',
           style: AppTextStyles.nunitoSansW700.copyWith(
             color: const Color(0xFF3A89FF),
             fontSize: 20,
@@ -49,7 +49,7 @@ class _RegisterInToMilliyma extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            'Register to Milliyma',
+            'Register to My academy',
             style: AppTextStyles.nunitoSansW700.copyWith(fontSize: 18),
           ),
           const _NameInput(),

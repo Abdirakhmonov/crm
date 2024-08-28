@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "929796003924",
+    "project_id": "my-academy-59080",
+    "storage_bucket": "my-academy-59080.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:929796003924:android:21adde8ace127be207b5c1",
+        "android_client_info": {
+          "package_name": "com.example.crm_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "929796003924-53j3d9rl10kid3epehjg9ks74ap9crl7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaM_n0UP4JaSX2Kla6T8JatX-h51fZE50"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "929796003924-53j3d9rl10kid3epehjg9ks74ap9crl7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

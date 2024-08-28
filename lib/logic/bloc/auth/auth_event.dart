@@ -1,7 +1,10 @@
 part of 'auth_bloc.dart';
-
 @freezed
 class AuthEvent with _$AuthEvent {
+  const factory AuthEvent.socialLogin({
+    @Default(SocialLoginTypes.google) SocialLoginTypes type,
+  }) = SocialLoginEvent;
+
   const factory AuthEvent.loginUser({
     required String phoneNumber,
     required String password,
@@ -19,6 +22,7 @@ class AuthEvent with _$AuthEvent {
       ResetPasswordEvent;
 
   const factory AuthEvent.checkTokenExpiry() = CheckTokenExpiryEvent;
+
 
   const factory AuthEvent.logout() = LogoutEvent;
 }
